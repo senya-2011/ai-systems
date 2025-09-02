@@ -100,7 +100,7 @@ divorced(zombie, sheep, 2000).
 alive(Person, Year) :-
 	number(Year),
 	Year =< 2025,
-	born(Person, BirthYear),
+	born(Person, BirthYear, _),
 	BirthYear =< Year,
 	( \+ died(Person, _) ; (died(Person, DiedYear), DiedYear > Year)).
 
@@ -108,16 +108,20 @@ alive(Person, Year) :-
 parent_of(P, C) :-
     parents(P, _, C) ; parents(_, P, C).
     
+% человек - мужчина?
 male(Person) :-
     born(Person, _, m).
 
+% человек - женщина?
 female(Person) :-
 	born(Person, _, f).
 
+% нахождение отца ребенка
 father(F, Child) :-
 	parent_of(F, Child),
 	male(F).
 
+% нахождение матери ребенка
 mother(M, Child) :-
 	parent_of(M, Child),
 	female(M).
@@ -139,86 +143,100 @@ half_sibling(X, Y) :-
 
 % хотя бы 1 общий родитель
 sibling(X, Y) :-
-	mother(M,X), mother(M,Y), X \= Y.
-sibling(X, Y) :- 
-	father(F,X), father(F,Y), 
-	\+ (mother(_, X), mother(_,Y)),
- 	X \= Y.
+    X \= Y,
+    parent_of(P, X),
+    parent_of(P, Y).
 
+% нахождение сестер
 sisters(X, Y):-
 	female(X),
 	female(Y),
 	full_sibling(X, Y).
-	
+
+% нахождение братьев
 brothers(X, Y):-
 	male(X),
 	male(Y),
 	full_sibling(X, Y).
 	
-
+% женаты ли всю жизнь
 is_married(Wife, Husband):-
 	married(Wife, Husband, _) ; married(Husband, Wife, _),
-	\+ divorced(Wife, Husband) ; \+ divorced(Husband, Wife).
+	\+ divorced(Wife, Husband, _) ; \+ divorced(Husband, Wife, _).
 
+% найти мужа
 husband(Wife, Husband):-
 	female(Wife),
 	is_married(Wife, Husband),
 	male(Husband).
 
+% найти жену
 wife(Husband, Wife):-
 	male(Husband),
 	is_married(Husband, Wife),
 	female(Wife).
 
+% двоюродные братья и сестры
 cousins(X, Y):-
 	\+ sibling(X, Y),
 	parent_of(P1, X),
 	parent_of(P2, Y),
 	full_sibling(P1, P2).
 
+% двоюродные сестры
 cousins_sisters(X, Y):-
 	female(X),
 	female(Y),
 	cousins(X, Y).
 
+% двоюродные братья
 cousins_brothers(X, Y):-
 	male(X),
 	male(Y),
 	cousins(X, Y).
 
+% бабушки дедушки
 grandparent(Child, Grandparent) :-
 	parent_of(Parent, Child),
 	parent_of(Grandparent, Parent).
 
+% бабушки
 grandmother(Child, Grandmother):-
 	female(Grandmother),
 	grandparent(Child, Grandmother).
 
+% дедушки
 grandfather(Child, Grandfather):-
 	male(Grandfather),
 	grandparent(Child, Grandfather).
 
+% универсальная проверка на брак (без разницы кто идет первый)
 married_univ(X, Y, Year):-
 	married(X, Y, Year) ; married(Y, X, Year).
 
+% женаты ли в такой год
 married_in(X, Y, Year):-
 	married_univ(X, Y, MarryYear),
 	Year >= MarryYear,
 	(\+divorced(X, Y, _) ; (divorced(X, Y, DivYear), DivYear > Year)).
 
+% дети в такой то год
 childrens_in(Parent, Child, Year):-
 	born(Child, BornYear, _),
 	BornYear =< Year,
 	parent_of(Parent, Child).
 
+% сыновья в такой то год
 sons_in(Parent, Boy, Year):-
 	male(Boy),
 	childrens_in(Parent, Boy, Year).
 
+% дочери в такой то год
 daugthers_in(Parent, Girl, Year):-
 	male(Girl),
 	childrens_in(Parent, Girl, Year).
 
+% сирота ли в такой то год
 orphan_in(Child, Year):-
 	born(Child, BornYear, _),
 	BornYear =< Year,
@@ -230,26 +248,32 @@ orphan_in(Child, Year):-
 	P1Y =< Year,
 	P2Y =< Year.
 
+% дяди
 uncle(Uncle, Child) :-
     parent_of(Parent, Child),
-    brother(Uncle, Parent).
+    brothers(Uncle, Parent).
 
+% тети
 aunt(Aunt, Child) :-
     parent_of(Parent, Child),
-    sister(Aunt, Parent).
+    sisters(Aunt, Parent).
 
+% внуки внучки
 grandchild(Grandparent, Grandchild) :-
     parent_of(Parent, Grandchild),
     parent_of(Grandparent, Parent).
 
+% кол-во детей к такому то году
 children_count_in(Parent, Year, Count) :-
     findall(Child, childrens_in(Parent, Child, Year), Children),
     length(Children, Count).
 
+% кол-во братьев к такому то году
 brothers_count_in(X, Year, Count) :-
     findall(Bro, (brothers(X, Bro), born(Bro, BY, _), BY =< Year), Bros),
     length(Bros, Count).
 
+% кол-во систер к такому то году
 sisters_count_in(X, Year, Count) :-
     findall(Sis, (sisters(X, Sis), born(Sis, BY, _), BY =< Year), Siss),
     length(Siss, Count).
