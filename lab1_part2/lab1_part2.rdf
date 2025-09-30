@@ -1,0 +1,978 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:untitled-ontology-3="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#auntFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#auntFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasAunt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#brotherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#brotherOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#cousinFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#cousinFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasCousin"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#fatherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#fatherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#grandparentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#grandparentOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#grandsonOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#grandsonOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#grandsonOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasAunt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasAunt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasCousin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasCousin">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasUncle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#hasUncle">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#uncleFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#husbandOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#husbandOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#wifeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#marriedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#marriedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#motherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#motherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sibling">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sisterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sisterOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#uncleFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#uncleFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#wifeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#wifeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#birthYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#birthYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#diedYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#diedYear">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandra_a"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vladimir_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#mike"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1982</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2003</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandra_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandra_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1962</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleskandra_s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleskandra_s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:diedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1960</untitled-ontology-3:diedYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#arseniy_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#arseniy_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:diedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2006</untitled-ontology-3:diedYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#dmitriy_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#dmitriy_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandra_a"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vladimir_a"/>
+        <untitled-ontology-3:husbandOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#svetlana_a"/>
+        <untitled-ontology-3:marriedTo rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#svetlana_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#arseniy_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#matvey_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#ulyana_a"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1977</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#jessy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#jessy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:marriedTo rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#mike"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1985</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#matvey_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#matvey_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:diedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2004</untitled-ontology-3:diedYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#mike -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#mike">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2018</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#natalya_s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#natalya_s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleskandra_s"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sergey_s"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_s"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1978</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sergey_s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sergey_s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:marriedTo rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleskandra_s"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1960</untitled-ontology-3:birthYear>
+        <untitled-ontology-3:diedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2007</untitled-ontology-3:diedYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#svetlana_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#svetlana_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleskandra_s"/>
+        <untitled-ontology-3:childOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sergey_s"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#arseniy_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#matvey_a"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#ulyana_a"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1980</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#ulyana_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#ulyana_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2009</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vadim_s -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vadim_s">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:marriedTo rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#natalya_s"/>
+        <untitled-ontology-3:parentOf rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandr_s"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1975</untitled-ontology-3:birthYear>
+        <untitled-ontology-3:diedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2012</untitled-ontology-3:diedYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vladimir_a -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#vladimir_a">
+        <rdf:type rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+        <untitled-ontology-3:marriedTo rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#aleksandra_a"/>
+        <untitled-ontology-3:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1960</untitled-ontology-3:birthYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Cousin">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>мать X-а</rdfs:comment>
+        <rdfs:label>motherOf</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#motherOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>сестра Y-у</rdfs:comment>
+        <rdfs:label>sisterOf</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sibling"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sisterOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>тетя для</rdfs:comment>
+        <rdfs:label>auntFor</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Female"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#auntFor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>дядя для</rdfs:comment>
+        <rdfs:label>uncleFor</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#uncleFor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>fatherOf</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#fatherOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>брат Y-y</rdfs:comment>
+        <rdfs:label>brotherOf</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sibling"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#Male"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#brotherOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>кузин для</rdfs:comment>
+        <rdfs:label>cousinFor</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Cousin"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#parentOf"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#cousinFor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Cousin"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Child"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>братья/сестры</rdfs:comment>
+        <rdfs:label>siblings</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#childOf"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/P"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3#sibling"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/X"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/georg/ontologies/2025/8/untitled-ontology-3/Y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
