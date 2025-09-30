@@ -1,1 +1,10 @@
+# Python caches
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Project-specific
+lab2/__pycache__/
 lab2w/__pycache__/
